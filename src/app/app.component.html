@@ -1,21 +1,168 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="nav navbar-nav navbar-left">
+              <li><img class="pull-left" src="../assets/5.png"  height="60px" width="90px" id="eye" ></li>
+          </ul>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" style="  font-weight:bold;">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Today's Deals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">sell</a>
+            </li>
+          </ul> 
 
-<router-outlet></router-outlet>
+        <ul class="navbar-nav">
+     
+      <li class="nav-item" title="Login">
+        <a class="nav-link" href="#login"><i class="fa fa-user" aria-hidden="true">&nbsp;SignIn</i></a>
+      </li>
+      <li class="nav-item" title="Cart">
+        <a class="nav-link" href="#Cart"><i class="fa fa-shopping-cart" aria-hidden="true" >&nbsp;Cart : {{qnty}}</i></a>
+      </li>
+    </ul>
+   
+    </div>
+  </div>
+</nav>
+  <div *ngFor="let x of dataInfo">
+
+
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+
+<div class="col-md-8">
+<div class="product-content-right">
+  <div class="product-breadcroumb">
+      <a href="">Home</a>
+      <a href="">Category Name</a>
+      <a href="">{{x.sourceCategory}}</a>
+  </div>
+  
+  <div class="row">
+      <div class="col-sm-6">
+          <div class="product-images">
+              <div class="product-main-img">
+                  <img src="{{x.imageUrl}}" alt="" height="400px" width="300px">
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-sm-6">
+          <div class="product-inner">
+              <h2 class="product-name">{{x.title}}</h2>
+              by <a href=amazon.in>{{x.domain}}</a>
+              <div class="product-inner-price">
+                  <ins>{{x.price}}</ins> <del>₹ 100.00</del>
+              </div>    
+              
+              <form action="" class="cart">
+                  <div class="quantity">
+                      <input type="number" size="4" class="input-text qty text" title="Qty" value="1" [(ngModel)]="qnty" name="quantity" min="1" step="1">
+                  </div>
+                  <button class="add_to_cart_button" type="submit">Add to cart</button>&nbsp;
+                  <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+
+              </form>   
+              <input type="button" value="Details" (click)="fun1()" class="btn">&nbsp;&nbsp;
+<table *ngFor="let x of info">
+    <tr *ngFor="let y of x.topScores">
+      <td>{{y.topic}} </td>&nbsp;&nbsp;
+      <td>:&nbsp;&nbsp;{{y.score}}</td>&nbsp;&nbsp;&nbsp; 
+    </tr>
+  </table>
+              <br>
+              <div class="product-inner-category">
+                  <p>Category: <a href="">{{x.sourceCategory}}</a>. Tags: <a href="">awesome</a>, <a href="">best</a>, 
+                    <a href="">sale</a>, <a href="">Bluetooth</a>. </p>
+              </div> 
+              
+    
+  </div>
+            <!-- ------------------------------------------------------------------------------------------ -->
+            
+
+</div>
+
+  </div>
+  </div>
+</div>
+</div>
+<div class="bottom">
+
+<div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Get to Know Us</h2>
+                        <ul>
+                            <li><a href="#" target="_blank">About Us</a></li>
+                            <li><a href="#" target="_blank">Careers</a></li>
+                            <li><a href="#" target="_blank">Press Releases</a></li>
+                            <li><a href="#" target="_blank">Amazon Care</a></li>
+                            <li><a href="#" target="_blank">Gift a Smile</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Contact with US</h2>
+                        <ul>
+                            <li><a href="#" target="_blank">Facebook</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="#" target="_blank">Instagram</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Make Money with Us</h2>
+                        <ul>
+                            <li><a href="#">Sell on Amazon</a></li>
+                            <li><a href="#">Become an Affiliate</a></li>
+                            <li><a href="#">Fulfilment by Amazon</a></li>
+                            <li><a href="#">Advertise Your Products</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Let Us Help You</h2>
+                        <ul>
+                            <li><a href="#">Your Account</a></li>
+                            <li><a href="#">Return Centre</a></li>
+                            <li><a href="#">100% Purchase Protection</a></li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+    
+<div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <p style="text-align:right">&copy; 1996-2019, Amazon.com, Inc. or its affiliates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </div>
